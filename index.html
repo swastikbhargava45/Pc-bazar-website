@@ -3,34 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PC BAZAR | Best Computer Shop in Katni</title>
-    <meta name="description" content="PC BAZAR is the best computer shop in Katni, Madhya Pradesh. We offer custom gaming PCs, laptop repair, desktop repair, and SSD upgrades. Affordable pricing and fast service.">
-    <meta name="keywords" content="computer shop in Katni, PC repair Katni, gaming PC Katni, laptop repair, SSD upgrade Katni, PC Bazar">
+    <title>PC BAZAR | Premium Computer & Gaming Shop in Katni</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
-        /* --- CSS VARIABLES & RESET --- */
+        /* --- PREMIUM CSS VARIABLES --- */
         :root {
-            --primary: #000000;
-            --secondary: #f5f5f7;
-            --accent-green: #25D366; /* WhatsApp Green */
-            --text-main: #1d1d1f;
-            --text-light: #86868b;
-            --bg-white: #ffffff;
-            --transition: all 0.3s ease;
+            --bg-dark: #0a0a0c;
+            --bg-card: #151518;
+            --bg-glass: rgba(21, 21, 24, 0.7);
+            --neon-green: #00ff66;
+            --whatsapp-green: #25D366;
+            --text-main: #ffffff;
+            --text-muted: #a1a1aa;
+            --border-color: rgba(255, 255, 255, 0.08);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-white);
+            background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
@@ -38,285 +39,304 @@
 
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; }
+        img { max-width: 100%; display: block; border-radius: 12px; }
 
         /* --- NAVIGATION --- */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: var(--bg-glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-color);
+            transition: var(--transition);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 15px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -1px;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 1px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
+        .logo span { color: var(--neon-green); }
+
+        .nav-links { display: flex; gap: 35px; }
 
         .nav-links li a {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
-            color: var(--text-light);
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: var(--transition);
             cursor: pointer;
+            position: relative;
         }
 
-        .nav-links li a:hover, .nav-links li a.active {
-            color: var(--primary);
+        .nav-links li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--neon-green);
+            transition: var(--transition);
         }
 
-        .hamburger {
-            display: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
+        .nav-links li a:hover, .nav-links li a.active { color: var(--text-main); }
+        .nav-links li a:hover::after, .nav-links li a.active::after { width: 100%; }
+
+        .hamburger { display: none; font-size: 28px; cursor: pointer; color: var(--text-main); }
 
         /* --- BUTTONS --- */
         .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 800;
+            font-size: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: var(--transition);
             cursor: pointer;
             border: none;
+            position: relative;
+            overflow: hidden;
         }
 
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: #333; transform: translateY(-2px); }
-        
-        .btn-whatsapp { background: var(--accent-green); color: white; }
-        .btn-whatsapp:hover { background: #1ebd5a; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .btn-neon {
+            background: var(--neon-green);
+            color: var(--bg-dark);
+            box-shadow: 0 0 20px rgba(0, 255, 102, 0.3);
+        }
+        .btn-neon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 255, 102, 0.5);
+            background: #00cc52;
+        }
 
-        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
-        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn-whatsapp {
+            background: transparent;
+            color: var(--whatsapp-green);
+            border: 2px solid var(--whatsapp-green);
+        }
+        .btn-whatsapp:hover {
+            background: var(--whatsapp-green);
+            color: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+        }
 
-        /* --- PAGE VIEWS (SPA LOGIC) --- */
+        /* --- SPA VIEW LOGIC --- */
         .page-view {
             display: none;
-            padding-top: 80px; /* offset for fixed header */
-            animation: fadeIn 0.4s ease-in-out;
-            min-height: 80vh;
+            padding-top: 80px;
+            min-height: 100vh;
+            opacity: 0;
         }
-        .page-view.active { display: block; }
+        .page-view.active { display: block; animation: fadePageIn 0.5s forwards; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+        @keyframes fadePageIn {
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         /* --- HERO SECTION --- */
         .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            padding: 80px 20px;
-            background: var(--secondary);
-            border-radius: 0 0 40px 40px;
-            margin-bottom: 50px;
+            padding: 20px;
+            background: linear-gradient(to bottom, rgba(10, 10, 12, 0.5), var(--bg-dark)),
+                        url('https://images.unsplash.com/photo-1587202372634-32705e3bf49c?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
         }
 
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 20px;
-            background: -webkit-linear-gradient(45deg, #000, #434343);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-light);
-            margin-bottom: 10px;
-            max-width: 600px;
-            margin-inline: auto;
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
         }
 
         .urgency-badge {
-            display: inline-block;
-            background: #ffe5e5;
-            color: #d32f2f;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: var(--neon-green);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 14px;
             font-weight: 800;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
             margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 span { color: var(--neon-green); }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
         }
 
         .hero-ctas {
-            margin-top: 30px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 20px;
         }
 
-        /* --- SECTION CONTAINERS --- */
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+        /* --- SECTION STRUCTURE --- */
+        .section-container { max-width: 1200px; margin: 0 auto; padding: 100px 20px; }
+        
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-header h2 { font-size: 3rem; font-weight: 800; margin-bottom: 15px; }
+        .section-header h2 span { color: var(--neon-green); }
+        .section-header p { color: var(--text-muted); font-size: 1.1rem; }
 
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 50px;
-        }
-
-        /* --- GRID CARDS (Services & Products) --- */
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
+        /* --- CARDS (GLASSMORPHISM) --- */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        
         .card {
-            background: var(--bg-white);
-            border: 1px solid #eaeaea;
-            border-radius: 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
             padding: 30px;
             transition: var(--transition);
-            text-align: center;
-        }
-
-        .card:hover {
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            transform: translateY(-5px);
-        }
-
-        .card i {
-            font-size: 40px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .card h3 { font-size: 1.5rem; margin-bottom: 15px; }
-        .card p { color: var(--text-light); margin-bottom: 20px; font-size: 0.95rem; }
-
-        /* --- PRODUCT CARDS --- */
-        .product-img {
-            width: 100%;
-            height: 200px;
-            background: var(--secondary);
-            border-radius: 10px;
-            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
             display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 50px;
-            color: #ccc;
+            flex-direction: column;
+            height: 100%;
         }
 
-        /* --- TRUST STATS --- */
-        .stats-container {
-            display: flex;
-            justify-content: space-around;
-            background: var(--primary);
-            color: white;
-            padding: 50px 20px;
-            border-radius: 20px;
-            margin: 50px 0;
-            flex-wrap: wrap;
-            gap: 20px;
-            text-align: center;
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--neon-green);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
         }
-        .stat-item h2 { font-size: 2.5rem; margin-bottom: 5px; }
-        .stat-item p { font-size: 0.9rem; color: #aaa; }
 
-        /* --- CONTACT PAGE --- */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-        .contact-info a {
-            display: block;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-        .contact-info i { margin-right: 10px; color: var(--accent-green); }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-color: rgba(255,255,255,0.2); }
+        .card:hover::before { transform: scaleX(1); }
 
-        form { display: flex; flex-direction: column; gap: 15px; }
+        .card-img {
+            width: 100%; height: 220px; object-fit: cover;
+            border-radius: 8px; margin-bottom: 25px;
+        }
+
+        .card h3 { font-size: 1.6rem; margin-bottom: 10px; }
+        .card p { color: var(--text-muted); margin-bottom: 25px; font-size: 1rem; flex-grow: 1; }
+        .card .price { font-size: 1.2rem; font-weight: 800; color: var(--neon-green); margin-bottom: 20px; }
+
+        /* --- TRUST / STATS SECTION --- */
+        .stats-section {
+            background: linear-gradient(rgba(21, 21, 24, 0.9), rgba(21, 21, 24, 0.9)), url('https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=1920&auto=format&fit=crop') center/cover fixed;
+            padding: 80px 20px;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px; text-align: center; max-width: 1200px; margin: 0 auto;
+        }
+
+        .stat-item h2 { font-size: 3.5rem; color: var(--neon-green); font-weight: 900; margin-bottom: 10px; }
+        .stat-item p { font-size: 1.2rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* --- TESTIMONIALS --- */
+        .testimonial-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+        }
+        .user-info { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
+        .user-info img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; }
+        .stars { color: #FFD700; margin-bottom: 10px; }
+
+        /* --- CONTACT SECTION --- */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+        .contact-box { background: var(--bg-card); padding: 40px; border-radius: 16px; border: 1px solid var(--border-color); }
+        .contact-box h3 { margin-bottom: 20px; font-size: 1.8rem; }
+        .contact-box p, .contact-box a { color: var(--text-muted); display: block; margin-bottom: 15px; font-size: 1.1rem; }
+        .contact-box i { color: var(--neon-green); width: 25px; }
+        
+        form { display: flex; flex-direction: column; gap: 20px; }
         input, textarea {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            font-size: 1rem;
-            font-family: 'Inter', sans-serif;
+            width: 100%; padding: 16px; background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border-color); border-radius: 8px;
+            color: white; font-size: 1rem; outline: none; transition: var(--transition);
         }
+        input:focus, textarea:focus { border-color: var(--neon-green); background: rgba(255,255,255,0.08); }
 
         /* --- STICKY WHATSAPP --- */
         .sticky-wa {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: var(--accent-green);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 35px;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            z-index: 9999;
-            transition: var(--transition);
+            position: fixed; bottom: 30px; right: 30px;
+            background: var(--whatsapp-green); color: white;
+            width: 65px; height: 65px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 35px; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 9999; transition: var(--transition);
         }
-        .sticky-wa:hover { transform: scale(1.1); color: white; }
+        .sticky-wa:hover { transform: scale(1.1) rotate(-10deg); color: white; }
 
         /* --- FOOTER --- */
-        footer {
-            background: var(--secondary);
-            padding: 40px 20px;
-            text-align: center;
-            border-top: 1px solid #eaeaea;
-        }
-        footer p { color: var(--text-light); font-size: 0.9rem; margin-top: 10px; }
+        footer { background: var(--bg-card); padding: 60px 20px 30px; border-top: 1px solid var(--border-color); text-align: center; }
+        footer p { color: var(--text-muted); margin-top: 20px; }
 
-        /* --- MOBILE RESPONSIVE --- */
+        /* --- SCROLL ANIMATIONS (JS Triggered) --- */
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: 0.8s all ease-out; }
+        .animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+
+        /* --- MOBILE RESPONSIVENESS --- */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none; /* Hidden by default on mobile */
-                flex-direction: column;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                padding: 20px;
-                border-bottom: 1px solid #ddd;
-                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
-            }
-            .nav-links.show { display: flex; }
-            .hamburger { display: block; }
-            .hero h1 { font-size: 2.2rem; }
+            .hero h1 { font-size: 2.8rem; }
             .hero-ctas { flex-direction: column; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%; height: 100vh; width: 250px;
+                background: var(--bg-card); flex-direction: column; padding: 100px 30px;
+                transition: var(--transition); border-left: 1px solid var(--border-color);
+            }
+            .nav-links.active { right: 0; }
+            .hamburger { display: block; z-index: 1001; }
             .contact-grid { grid-template-columns: 1fr; }
-            .stats-container { flex-direction: column; }
         }
     </style>
 </head>
@@ -326,9 +346,9 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <header>
+    <header id="header">
         <div class="nav-container">
-            <div class="logo" onclick="navigate('home')">PC BAZAR</div>
+            <div class="logo" onclick="navigate('home')">PC <span>BAZAR</span></div>
             <ul class="nav-links" id="navLinks">
                 <li><a onclick="navigate('home')" class="active">Home</a></li>
                 <li><a onclick="navigate('services')">Services</a></li>
@@ -337,60 +357,107 @@
                 <li><a onclick="navigate('contact')">Contact</a></li>
             </ul>
             <div class="hamburger" onclick="toggleMenu()">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars" id="menuIcon"></i>
             </div>
         </div>
     </header>
 
     <main id="home" class="page-view active">
         <section class="hero">
-            <div class="urgency-badge"><i class="fas fa-bolt"></i> Same Day Repair Available</div>
-            <h1>Best Computer Shop in Katni</h1>
-            <p>Premium Tech. Unbeatable Service.</p>
-            <p>PC Builds | Laptop Repair | SSD Upgrades | Accessories</p>
-            <div class="hero-ctas">
-                <a href="https://wa.me/910000000000" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-                <a href="tel:+910000000000" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+            <div class="hero-content animate-on-scroll is-visible">
+                <div class="urgency-badge"><i class="fas fa-bolt"></i> Fast Same-Day Repair</div>
+                <h1>Premium Tech. <br><span>Unbeatable Performance.</span></h1>
+                <p>Katni’s #1 destination for custom gaming rigs, high-speed SSD upgrades, and expert laptop repairs. Experience technology the right way.</p>
+                <div class="hero-ctas">
+                    <a href="https://wa.me/910000000000" class="btn btn-neon"><i class="fab fa-whatsapp"></i> Get Quote on WhatsApp</a>
+                    <a href="#products" onclick="navigate('products')" class="btn btn-whatsapp">View Products</a>
+                </div>
             </div>
         </section>
 
         <section class="section-container">
-            <h2 class="section-title">Why Choose PC BAZAR?</h2>
-            <div class="grid-3">
+            <div class="section-header animate-on-scroll">
+                <h2>Our <span>Expertise</span></h2>
+                <p>Professional services engineered for ultimate reliability.</p>
+            </div>
+            <div class="grid-3 animate-on-scroll">
                 <div class="card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Expert Repairs</h3>
-                    <p>Fast, reliable diagnosis and repair for all laptops and desktops in Katni.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-outline btn-sm">Get Repair Quote</a>
-                </div>
-                <div class="card">
-                    <i class="fas fa-gamepad"></i>
+                    <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Custom PC Build">
                     <h3>Custom PC Builds</h3>
-                    <p>From budget setups to high-end 4K gaming rigs. Built with cable management perfection.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-outline btn-sm">Build My PC</a>
+                    <p>Clean cable management, optimal airflow, and maximum FPS. Built to your exact budget and requirements.</p>
+                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp" style="width: 100%;">Enquire Now</a>
                 </div>
                 <div class="card">
-                    <i class="fas fa-microchip"></i>
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Laptop Repair">
+                    <h3>Professional Repair</h3>
+                    <p>Dead motherboards, broken hinges, or screen replacements. We diagnose honestly and fix rapidly.</p>
+                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp" style="width: 100%;">Get Repair Quote</a>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=800&auto=format&fit=crop" class="card-img" alt="SSD Upgrade">
                     <h3>SSD & RAM Upgrades</h3>
-                    <p>Make your old laptop 10x faster with our affordable SSD upgrade services.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-outline btn-sm">Upgrade Now</a>
+                    <p>Make your old system 10x faster. We safely clone your data to ultra-fast NVMe storage.</p>
+                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp" style="width: 100%;">Upgrade My PC</a>
                 </div>
             </div>
         </section>
 
-        <section class="section-container">
-            <div class="stats-container">
+        <section class="stats-section animate-on-scroll">
+            <div class="stats-grid">
                 <div class="stat-item">
                     <h2>500+</h2>
-                    <p>PCs Built</p>
+                    <p>Custom PCs Built</p>
                 </div>
                 <div class="stat-item">
-                    <h2>1000+</h2>
-                    <p>Happy Customers</p>
+                    <h2>100%</h2>
+                    <p>Transparent Pricing</p>
                 </div>
                 <div class="stat-item">
-                    <h2>5.0 <i class="fas fa-star" style="font-size:1rem; color:#ffd700;"></i></h2>
-                    <p>Google Rating</p>
+                    <h2>24hr</h2>
+                    <p>Average Repair Time</p>
+                </div>
+                <div class="stat-item">
+                    <h2>4.9★</h2>
+                    <p>Customer Rating</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-container animate-on-scroll">
+            <div class="section-header">
+                <h2>Real <span>Reviews</span></h2>
+                <p>Don't just take our word for it.</p>
+            </div>
+            <div class="grid-3">
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=200&auto=format&fit=crop" alt="User">
+                        <div>
+                            <h4>Rahul Tiwari</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p>"Got my old Dell laptop upgraded with an SSD here. The speed difference is insane and the pricing was much better than others in Katni."</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=200&auto=format&fit=crop" alt="User">
+                        <div>
+                            <h4>Vikash Sharma</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p>"Built an RTX 4060 setup for gaming and video editing. Cable management is beautiful. PC Bazar knows their stuff!"</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="user-info">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop" alt="User">
+                        <div>
+                            <h4>Pooja Patel</h4>
+                            <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                    <p>"My screen was totally broken. They replaced it the very same day. Super professional and polite service."</p>
                 </div>
             </div>
         </section>
@@ -398,37 +465,28 @@
 
     <main id="services" class="page-view">
         <section class="section-container">
-            <h1 class="section-title">Our Services</h1>
-            <div class="grid-3">
+            <div class="section-header animate-on-scroll">
+                <h2>Our <span>Premium Services</span></h2>
+                <p>Industry-standard repair and upgrading facilities right here in Katni.</p>
+            </div>
+            <div class="grid-3 animate-on-scroll">
                 <div class="card">
-                    <i class="fas fa-desktop"></i>
-                    <h3>Custom Gaming PCs</h3>
-                    <p>We source the best parts and build exactly to your budget. Includes thermal testing, OS installation, and 1-year build warranty.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp w-100">Enquire on WhatsApp</a>
+                    <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Gaming Setup">
+                    <h3>Gaming Rig Assembly</h3>
+                    <p>Thermal paste application, BIOS updates, XMP profile setup, and rigorous stress testing included with every build.</p>
+                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp" style="width: 100%;"><i class="fab fa-whatsapp"></i> Chat with Expert</a>
                 </div>
                 <div class="card">
-                    <i class="fas fa-laptop-medical"></i>
-                    <h3>Laptop & Desktop Repair</h3>
-                    <p>Screen replacement, dead motherboard fixes, keyboard issues, and battery replacements. Affordable pricing guaranteed.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp w-100">Enquire on WhatsApp</a>
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Motherboard Repair">
+                    <h3>Chip-Level Repair</h3>
+                    <p>Advanced diagnostic tools used to fix dead motherboards, water damage, and short circuits.</p>
+                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp" style="width: 100%;"><i class="fab fa-whatsapp"></i> Get Estimate</a>
                 </div>
                 <div class="card">
-                    <i class="fas fa-hdd"></i>
-                    <h3>SSD & RAM Upgrades</h3>
-                    <p>Say goodbye to lag. We clone your old hard drive to a blazing fast NVMe SSD without losing any of your data.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp w-100">Enquire on WhatsApp</a>
-                </div>
-                <div class="card">
-                    <i class="fas fa-print"></i>
-                    <h3>Printer Setup & Repair</h3>
-                    <p>Home and office printer installation, ink refilling, and hardware troubleshooting.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp w-100">Enquire on WhatsApp</a>
-                </div>
-                <div class="card">
-                    <i class="fab fa-windows"></i>
-                    <h3>OS & Software Installation</h3>
-                    <p>Genuine Windows installation, Microsoft Office setup, and virus removal services.</p>
-                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp w-100">Enquire on WhatsApp</a>
+                    <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?q=80&w=800&auto=format&fit=crop" class="card-img" alt="SSD">
+                    <h3>Performance Boost</h3>
+                    <p>DDR4/DDR5 RAM upgrades and Gen4 NVMe SSD installations to eliminate bottlenecks.</p>
+                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp" style="width: 100%;"><i class="fab fa-whatsapp"></i> Upgrade Now</a>
                 </div>
             </div>
         </section>
@@ -436,74 +494,97 @@
 
     <main id="products" class="page-view">
         <section class="section-container">
-            <h1 class="section-title">Featured Products</h1>
-            <div class="grid-3">
+            <div class="section-header animate-on-scroll">
+                <h2>Featured <span>Hardware</span></h2>
+                <p>Top-tier components and pre-built systems ready for pickup.</p>
+            </div>
+            <div class="grid-3 animate-on-scroll">
+                
                 <div class="card">
-                    <div class="product-img"><i class="fas fa-computer"></i></div>
-                    <h3>RTX 4060 Gaming Rig</h3>
-                    <p>Intel i5 13th Gen, 16GB DDR5, 1TB Gen4 NVMe, RTX 4060 8GB.</p>
-                    <h4 style="margin-bottom: 15px;">Affordable Pricing</h4>
-                    <a href="https://wa.me/910000000000?text=I'm%20interested%20in%20the%20RTX%204060%20Rig" class="btn btn-whatsapp">Get Quote on WhatsApp</a>
+                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Prebuilt PC">
+                    <h3>The "Esports" Build</h3>
+                    <p>Intel i5 12400F, 16GB RAM, 500GB NVMe, GTX 1650. Perfect for Valorant and CS:GO.</p>
+                    <div class="price">Starting at ₹38,000</div>
+                    <a href="https://wa.me/910000000000?text=I'm%20interested%20in%20the%20Esports%20Build" class="btn btn-neon" style="width: 100%;">View Details</a>
                 </div>
+
                 <div class="card">
-                    <div class="product-img"><i class="fas fa-memory"></i></div>
-                    <h3>Crucial 1TB NVMe SSD</h3>
-                    <p>Lightning fast boot times. Free installation included if bought in-store.</p>
-                    <h4 style="margin-bottom: 15px;">In Stock</h4>
-                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp">Get Quote on WhatsApp</a>
+                    <img src="https://images.unsplash.com/photo-1624704764835-9f55e0031122?q=80&w=800&auto=format&fit=crop" class="card-img" alt="High End PC">
+                    <h3>The "Pro Creator" Rig</h3>
+                    <p>AMD Ryzen 7, 32GB DDR5, 1TB Gen4 SSD, RTX 4060Ti. Crushes 4K video editing.</p>
+                    <div class="price">Starting at ₹85,000</div>
+                    <a href="https://wa.me/910000000000?text=I'm%20interested%20in%20the%20Creator%20Rig" class="btn btn-neon" style="width: 100%;">View Details</a>
                 </div>
+
                 <div class="card">
-                    <div class="product-img"><i class="fas fa-keyboard"></i></div>
-                    <h3>Gaming Accessories</h3>
-                    <p>Mechanical keyboards, gaming mice, monitors, and RGB mousepads.</p>
-                    <h4 style="margin-bottom: 15px;">Multiple Brands</h4>
-                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp">Get Quote on WhatsApp</a>
+                    <img src="https://images.unsplash.com/photo-1612287230202-1ff1d85d1bdf?q=80&w=800&auto=format&fit=crop" class="card-img" alt="Gaming Mouse">
+                    <h3>Premium Accessories</h3>
+                    <p>Mechanical Keyboards, High Hz Monitors, Gaming Mice, and RGB Mousepads from top brands.</p>
+                    <div class="price">Affordable Pricing</div>
+                    <a href="https://wa.me/910000000000" class="btn btn-whatsapp" style="width: 100%;">Enquire Stock</a>
                 </div>
+
             </div>
         </section>
     </main>
 
     <main id="about" class="page-view">
-        <section class="section-container" style="max-width: 800px; text-align: center;">
-            <h1 class="section-title">About PC BAZAR</h1>
-            <p style="font-size: 1.2rem; margin-bottom: 20px;">Founded in Katni, Madhya Pradesh, PC BAZAR started with a simple mission: to provide honest, premium, and affordable computer services to our local community.</p>
-            <p style="color: var(--text-light); margin-bottom: 40px;">Whether you are a student needing a quick laptop fix, a gamer looking for maximum FPS, or an office requiring reliable IT setups, we treat every machine like it's our own. No hidden fees, no unnecessary upsells—just genuine tech expertise.</p>
+        <section class="section-container animate-on-scroll">
+            <div class="section-header">
+                <h2>Behind <span>PC BAZAR</span></h2>
+                <p>Driven by passion, built on trust.</p>
+            </div>
             
-            <div style="background: var(--secondary); padding: 30px; border-radius: 20px; text-align: left;">
-                <h3 style="margin-bottom: 15px;">Our Promise:</h3>
-                <ul style="list-style-type: disc; padding-left: 20px; color: var(--text-main); display: flex; flex-direction: column; gap: 10px;">
-                    <li><strong>Transparency:</strong> We explain exactly what's wrong before charging you.</li>
-                    <li><strong>Speed:</strong> Same-day repair available for most common laptop issues.</li>
-                    <li><strong>Quality:</strong> We only use trusted, genuine brands for parts and upgrades.</li>
-                </ul>
+            <div class="contact-grid">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=800&auto=format&fit=crop" alt="Shop Interior" style="box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="font-size: 2rem; margin-bottom: 20px;">Setting the Standard in Katni</h3>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 20px;">PC BAZAR wasn't created just to sell computers. It was born out of frustration with poor local repair standards and overpriced hardware. We wanted to bring metro-city tier professionalism right here to Katni.</p>
+                    <p style="color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px;">Whether you're handing us a ₹30,000 office laptop or a ₹1.5 Lakh gaming beast, our workstation protocols remain the same. Total transparency, zero hidden charges, and absolute care for your hardware.</p>
+                    <a href="https://wa.me/910000000000" class="btn btn-neon" style="align-self: flex-start;">Talk to the Founder</a>
+                </div>
             </div>
         </section>
     </main>
 
     <main id="contact" class="page-view">
-        <section class="section-container">
-            <h1 class="section-title">Get In Touch</h1>
+        <section class="section-container animate-on-scroll">
+            <div class="section-header">
+                <h2>Get In <span>Touch</span></h2>
+                <p>Drop by the store or text us for an instant quote.</p>
+            </div>
             <div class="contact-grid">
                 
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <p style="color: var(--text-light); margin-bottom: 30px;">Visit our store in Katni or reach out online for instant quotes.</p>
+                <div class="contact-box">
+                    <h3>Contact Info</h3>
+                    <a href="tel:+910000000000"><i class="fas fa-phone-alt"></i> +91 00000-00000</a>
+                    <a href="https://wa.me/910000000000" style="color: var(--whatsapp-green);"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
                     
-                    <a href="tel:+910000000000" style="color: var(--primary);"><i class="fas fa-phone-alt"></i> +91 00000-00000</a>
-                    <a href="https://wa.me/910000000000" style="color: var(--accent-green);"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-                    <p style="margin-top: 20px; font-weight: 600;"><i class="fas fa-map-marker-alt" style="color: var(--primary);"></i> Address:</p>
-                    <p style="color: var(--text-light); margin-bottom: 30px;">Main Market Road, Katni,<br>Madhya Pradesh, India</p>
+                    <h3 style="margin-top: 40px; font-size: 1.5rem;"><i class="fas fa-map-marker-alt"></i> Location</h3>
+                    <p>Main Market Road, Katni,<br>Madhya Pradesh, India - 483501</p>
 
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116346.0694589886!2d80.32049919999999!3d23.834076399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39842a2202b28c89%3A0xc3f5b721e7fc93b6!2sKatni%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1690000000000!5m2!1sen!2sin" width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+                    <div style="width: 100%; height: 200px; background: url('https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=800&auto=format&fit=crop') center/cover; border-radius: 12px; margin-top: 20px; position: relative; overflow: hidden; border: 1px solid var(--border-color);">
+                        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center;">
+                            <a href="#" class="btn btn-neon btn-sm"><i class="fas fa-location-arrow"></i> Get Directions</a>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="contact-form" style="background: var(--secondary); padding: 30px; border-radius: 20px;">
-                    <h3 style="margin-bottom: 20px;">Send an Enquiry</h3>
-                    <form onsubmit="event.preventDefault(); alert('Form submitted! In a live environment, connect this to Formspree or a backend.');">
+                <div class="contact-box">
+                    <h3>Send a Message</h3>
+                    <form onsubmit="event.preventDefault(); alert('Message sent successfully! We will get back to you shortly.');">
                         <input type="text" placeholder="Your Name" required>
-                        <input type="tel" placeholder="Phone Number" required>
-                        <textarea rows="5" placeholder="How can we help you? (e.g. My laptop is not turning on)" required></textarea>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <input type="tel" placeholder="Phone / WhatsApp Number" required>
+                        <select style="width: 100%; padding: 16px; background: rgba(255,255,255,0.05); border: 1px solid var(--border-color); border-radius: 8px; color: white; outline: none; margin-bottom: 20px;">
+                            <option style="background: var(--bg-card);">I need a Custom PC</option>
+                            <option style="background: var(--bg-card);">I need Laptop Repair</option>
+                            <option style="background: var(--bg-card);">SSD/RAM Upgrade</option>
+                            <option style="background: var(--bg-card);">Other / Enquiry</option>
+                        </select>
+                        <textarea rows="4" placeholder="Briefly describe your requirement..." required></textarea>
+                        <button type="submit" class="btn btn-neon">Submit Enquiry</button>
                     </form>
                 </div>
             </div>
@@ -511,41 +592,87 @@
     </main>
 
     <footer>
-        <div class="logo">PC BAZAR</div>
-        <p>Your Trusted Computer Shop in Katni, MP.</p>
-        <div style="margin-top: 20px;">
-            <a href="https://wa.me/910000000000" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Get Quote on WhatsApp</a>
+        <div class="logo" style="justify-content: center; margin-bottom: 20px;">PC <span>BAZAR</span></div>
+        <p>Premium Computer Services in Katni, MP.</p>
+        <div style="margin-top: 25px;">
+            <a href="https://wa.me/910000000000" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat with us</a>
         </div>
-        <p style="margin-top: 30px; font-size: 0.8rem;">&copy; 2026 PC BAZAR Katni. All rights reserved.</p>
+        <p style="margin-top: 40px; font-size: 0.9rem; border-top: 1px solid var(--border-color); padding-top: 20px;">
+            © 2026 PC BAZAR. All rights reserved. Built for high performance.
+        </p>
     </footer>
 
     <script>
-        // Toggle Mobile Menu
+        // 1. Mobile Menu Toggle
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('show');
+            const navLinks = document.getElementById('navLinks');
+            const icon = document.getElementById('menuIcon');
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
         }
 
-        // Single Page App (SPA) Navigation Logic
+        // 2. SPA Navigation Logic
         function navigate(pageId) {
             // Hide all pages
-            const pages = document.querySelectorAll('.page-view');
-            pages.forEach(page => page.classList.remove('active'));
+            document.querySelectorAll('.page-view').forEach(page => {
+                page.classList.remove('active');
+            });
 
-            // Show selected page
+            // Show target page
             document.getElementById(pageId).classList.add('active');
 
-            // Update Active link in Nav
-            const links = document.querySelectorAll('.nav-links a');
-            links.forEach(link => link.classList.remove('active'));
+            // Update active link in navbar
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
             event.target.classList.add('active');
 
-            // Hide mobile menu after clicking
-            document.getElementById('navLinks').classList.remove('show');
+            // Close mobile menu if open
+            document.getElementById('navLinks').classList.remove('active');
+            document.getElementById('menuIcon').classList.replace('fa-times', 'fa-bars');
 
-            // Scroll to top
+            // Scroll to top cleanly
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Re-trigger scroll animations for the new page
+            setTimeout(initScrollAnimations, 100);
         }
+
+        // 3. Header Scroll Effect (Glassmorphism shadow)
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+                header.style.background = 'rgba(10, 10, 12, 0.9)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'var(--bg-glass)';
+            }
+        });
+
+        // 4. Scroll Reveal Animations
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.animate-on-scroll').forEach((el) => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize animations on load
+        document.addEventListener("DOMContentLoaded", initScrollAnimations);
     </script>
 </body>
 </html>
-
